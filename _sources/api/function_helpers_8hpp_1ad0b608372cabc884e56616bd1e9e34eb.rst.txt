@@ -1,0 +1,13 @@
+.. _exhale_function_helpers_8hpp_1ad0b608372cabc884e56616bd1e9e34eb:
+
+Template Function hh::helpers::make_delayed(RETURN_TYPE(C::\*)(ARGUMENTS...))
+=============================================================================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_helpers.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: hh::helpers::make_delayed(RETURN_TYPE(C::*)(ARGUMENTS...))

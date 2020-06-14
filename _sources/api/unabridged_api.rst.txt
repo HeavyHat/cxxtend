@@ -1,0 +1,128 @@
+
+Full API
+--------
+
+Namespaces
+**********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_hh.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_hh__functools.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_hh__helpers.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_std.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   namespace_std__@0.rst
+
+Classes and Structs
+*******************
+
+
+.. toctree::
+   :maxdepth: 5
+
+   structhh_1_1functools_1_1lru__cache_1_1unexpected__tag.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structhh_1_1null__optional.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   structstd_1_1hash_3_01std_1_1tuple_3_01TT_8_8_8_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classhh_1_1functools_1_1lru__cache.rst
+
+Functions
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1af41ff9bde2df5105a5889e901ad21fe8.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1ab5fc48849fd93f3596b24c1b5ad9bd70.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1a8bd753ecaad59832ff1df16f5649509a.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1aa448a2bee4844a40e91158a37e8f662b.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1a9ebc6cf00a48d87d29f1fece44f9c035.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_lru__cache_8hpp_1a3586611017b2620e1af57a24aa800df5.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_helpers_8hpp_1af03ce94b424c204265e40f41c39019b6.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_helpers_8hpp_1a3e74ed6bc91e51185061ea3b7910934d.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   function_helpers_8hpp_1ad0b608372cabc884e56616bd1e9e34eb.rst
+
+Variables
+*********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   variable_lru__cache_8hpp_1a00961e5bd178d521f0a53fccb9e550bd.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   variable_optional_8hpp_1a471563d6c23ee9284b777299ef14fbad.rst
+
+Typedefs
+********
+
+
+.. toctree::
+   :maxdepth: 5
+
+   typedef_optional_8hpp_1a2c8541ab26c4ce41b3565695808f8f3a.rst

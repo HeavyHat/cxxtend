@@ -1,0 +1,26 @@
+.. _exhale_class_classhh_1_1functools_1_1lru__cache:
+
+Template Class lru_cache
+========================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_lru_cache.hpp`
+
+
+Nested Relationships
+--------------------
+
+
+Nested Types
+************
+
+- :ref:`exhale_struct_structhh_1_1functools_1_1lru__cache_1_1unexpected__tag`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: hh::functools::lru_cache
+   :members:
+   :protected-members:
+   :undoc-members:

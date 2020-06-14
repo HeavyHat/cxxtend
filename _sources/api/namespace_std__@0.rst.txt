@@ -1,0 +1,13 @@
+
+.. _namespace_std__@0:
+
+Namespace std::@0
+=================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+

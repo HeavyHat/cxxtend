@@ -1,0 +1,13 @@
+.. _exhale_function_lru__cache_8hpp_1ab5fc48849fd93f3596b24c1b5ad9bd70:
+
+Template Function hh::functools::make_lrucache(RETURN_TYPE(\*)(ARGUMENTS...), unsigned int)
+===========================================================================================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_lru_cache.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: hh::functools::make_lrucache(RETURN_TYPE(*)(ARGUMENTS...), unsigned int)

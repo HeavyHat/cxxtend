@@ -1,0 +1,56 @@
+
+.. _program_listing_file__home_runner_work_cxxtend_cxxtend_include_hh_helpers.hpp:
+
+Program Listing for File helpers.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_cxxtend_cxxtend_include_hh_helpers.hpp>` (``/home/runner/work/cxxtend/cxxtend/include/hh/helpers.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   #ifndef INCLUDED_HH_HELPERS_H
+   #define INCLUDED_HH_HELPERS_H
+   
+   #include <chrono>
+   #include <thread>
+   #include <functional>
+   
+   namespace hh::helpers{
+       
+   template <unsigned int DELAY, typename TIME_UNITS = std::chrono::milliseconds, typename RETURN_TYPE, typename... ARGUMENTS>
+   std::function<RETURN_TYPE(ARGUMENTS...)> make_delayed(RETURN_TYPE (*func)(ARGUMENTS...)) {
+       return [func](ARGUMENTS&& ...args) -> RETURN_TYPE {
+           std::this_thread::sleep_for(TIME_UNITS(DELAY));
+           return func(std::forward<ARGUMENTS>(args)...);
+       };
+   }
+   
+   template <unsigned int DELAY, typename TIME_UNITS = std::chrono::milliseconds, typename RETURN_TYPE, typename... ARGUMENTS>
+   std::function<RETURN_TYPE(ARGUMENTS...)> make_delayed(std::function<RETURN_TYPE(ARGUMENTS...)> func) {
+       return [func](ARGUMENTS&& ...args) -> RETURN_TYPE {
+           std::this_thread::sleep_for(TIME_UNITS(DELAY));
+           return func(std::forward<ARGUMENTS>(args)...);
+       };
+   }
+   
+   
+   template <unsigned int DELAY, typename TIME_UNITS = std::chrono::milliseconds, typename RETURN_TYPE, typename C, typename... ARGUMENTS>
+   std::function<RETURN_TYPE(ARGUMENTS...)> make_delayed(RETURN_TYPE (C::*func)(ARGUMENTS...)) {
+       return [func](ARGUMENTS&& ...args) -> RETURN_TYPE {
+           std::this_thread::sleep_for(TIME_UNITS(DELAY));
+           return func(std::forward<ARGUMENTS>(args)...);
+       };
+   }
+   
+   template <unsigned int DELAY, typename TIME_UNITS = std::chrono::milliseconds, typename RETURN_TYPE, typename C, typename... ARGUMENTS>
+   std::function<RETURN_TYPE(ARGUMENTS...)> make_delayed(RETURN_TYPE (C::*func)(ARGUMENTS...) const) {
+       return [func](ARGUMENTS&& ...args) -> RETURN_TYPE {
+           std::this_thread::sleep_for(TIME_UNITS(DELAY));
+           return func(std::forward<ARGUMENTS>(args)...);
+       };
+   }
+   }
+   
+   #endif

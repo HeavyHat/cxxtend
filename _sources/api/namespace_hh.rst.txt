@@ -1,0 +1,43 @@
+
+.. _namespace_hh:
+
+Namespace hh
+============
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_hh__functools`
+
+- :ref:`namespace_hh__helpers`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structhh_1_1null__optional`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_optional_8hpp_1a2c8541ab26c4ce41b3565695808f8f3a`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_optional_8hpp_1a471563d6c23ee9284b777299ef14fbad`

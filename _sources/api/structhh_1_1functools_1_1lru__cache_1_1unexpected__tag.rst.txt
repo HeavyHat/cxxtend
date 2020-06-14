@@ -1,0 +1,22 @@
+.. _exhale_struct_structhh_1_1functools_1_1lru__cache_1_1unexpected__tag:
+
+Struct lru_cache::unexpected_tag
+================================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_lru_cache.hpp`
+
+
+Nested Relationships
+--------------------
+
+This struct is a nested type of :ref:`exhale_class_classhh_1_1functools_1_1lru__cache`.
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: hh::functools::lru_cache::unexpected_tag
+   :members:
+   :protected-members:
+   :undoc-members:

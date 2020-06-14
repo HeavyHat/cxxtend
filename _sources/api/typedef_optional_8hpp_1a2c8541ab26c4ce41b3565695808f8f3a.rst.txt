@@ -1,0 +1,13 @@
+.. _exhale_typedef_optional_8hpp_1a2c8541ab26c4ce41b3565695808f8f3a:
+
+Typedef hh::optional
+====================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_optional.hpp`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: hh::optional

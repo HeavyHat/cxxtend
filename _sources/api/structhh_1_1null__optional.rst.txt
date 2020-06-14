@@ -1,0 +1,16 @@
+.. _exhale_struct_structhh_1_1null__optional:
+
+Struct null_optional
+====================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_optional.hpp`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: hh::null_optional
+   :members:
+   :protected-members:
+   :undoc-members:

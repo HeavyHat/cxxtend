@@ -1,0 +1,13 @@
+.. _exhale_variable_optional_8hpp_1a471563d6c23ee9284b777299ef14fbad:
+
+Variable hh::nullopt
+====================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_optional.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: hh::nullopt

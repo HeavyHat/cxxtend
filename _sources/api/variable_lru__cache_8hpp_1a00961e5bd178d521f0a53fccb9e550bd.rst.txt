@@ -1,0 +1,13 @@
+.. _exhale_variable_lru__cache_8hpp_1a00961e5bd178d521f0a53fccb9e550bd:
+
+Variable hh::functools::DEFAULT_SIZE
+====================================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_lru_cache.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: hh::functools::DEFAULT_SIZE
