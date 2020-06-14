@@ -66,3 +66,4 @@ docs-init:
 	$(VENV_DIR)/bin/python -m pip install -r requirements.txt
 
 docs: docs-init
+	$(CMAKE) --build $(BUILD_DIR) --target Sphinx
