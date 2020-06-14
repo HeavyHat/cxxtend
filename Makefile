@@ -6,7 +6,7 @@ BUILD_TOOL ?= Ninja
 CXX_STARDARD ?= 20
 JOBS ?= 8
 
-.PHONY: install all exec-test test exec-benchmark benchmark
+.PHONY: install all exec-test test exec-benchmark benchmark init check-format format
 
 $(BUILD_DIR)/rules.ninja:
 	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
@@ -43,8 +43,13 @@ $(BUILD_DIR)/test/benchmark/cxxtendbenchmark.tsk: init
 
 build-benchmark: $(BUILD_DIR)/test/unit/tests.hh.tsk
 
-exec-benchmark:
+exec-benchmark: build-benchmark
 	$(CMAKE) --build $(BUILD_DIR) --target benchmark -- -j$(JOBS)
 
+check-format: init
+	$(CMAKE) --build $(BUILD_DIR) --target check-format
+
+format: init
+	$(CMAKE) --build $(BUILD_DIR) --target format
 
 benchmark: build-benchmark exec-benchmark
