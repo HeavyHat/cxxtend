@@ -11,16 +11,19 @@ on:
 jobs:
   build:
 
-    runs-on: macos-latest
-    
+    runs-on: ubuntu-latest
+
     steps:
     - uses: actions/checkout@v1
-    
+
     - name: Install clang-format
-      run: brew install clang-format
+      run: apt-get install clang-format clang-tidy
 
     - name: configure
-      run: cmake -Htest -Bbuild
+      run: make init
 
     - name: check style
-      run: cmake --build build --target check-format
+      run: make check-format
+
+    - name: check linting
+      run: make lint
