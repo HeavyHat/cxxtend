@@ -1,7 +1,7 @@
 
 CMAKE ?= /usr/bin/cmake
 CTEST ?= /usr/bin/ctest
-PYTHON ?= python3.8
+PYTHON_EXE ?= python3.8
 VENV_DIR ?= venv
 BUILD_DIR ?= build
 BUILD_TOOL ?= Ninja
@@ -62,7 +62,7 @@ clang-tidy: init
 lint: clang-tidy
 
 docs-init: init
-	$(PYTHON) -m venv $(VENV_DIR)
+	$(PYTHON_EXE) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/python -m pip install -r requirements.txt
 
 docs: docs-init
