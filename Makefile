@@ -61,11 +61,11 @@ clang-tidy: init
 
 lint: clang-tidy
 
-docs-init: init
+docs-init:
 	$(PYTHON_EXE) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/python -m pip install -r requirements.txt
 
-docs: docs-init
+docs: docs-init init
 	$(CMAKE) --build $(BUILD_DIR) --target Sphinx
 
 tar: init
