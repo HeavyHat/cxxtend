@@ -18,9 +18,9 @@ jobs:
 
       - name: Build
         run: |
-          make init docs-init
+          make docs-init
           . venv/bin/activate
-          make docs
+          make init docs
 
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
