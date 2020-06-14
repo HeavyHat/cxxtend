@@ -24,6 +24,7 @@ jobs:
 
     - name: Initialisation
       run: |
+        make docs-init
         . venv/bin/activate
         make init
 

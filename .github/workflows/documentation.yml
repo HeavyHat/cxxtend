@@ -17,6 +17,7 @@ jobs:
 
       - name: Build
         run: |
+          make docs-init
           . venv/bin/activate
           make docs
 
