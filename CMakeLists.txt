@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10 FATAL_ERROR)
 
 project(Cxxtend
-    VERSION 1.0
+    VERSION 0.1
     LANGUAGES CXX)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake" ${CMAKE_MODULE_PATH})
@@ -48,3 +48,9 @@ add_subdirectory(test)
 add_subdirectory(docs)
 
 add_compile_options($<$<BOOL:${MSVC}:/permissive->)
+
+set (EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/include")
+
+add_custom_target(tar ALL COMMAND
+    ${CMAKE_COMMAND} -E tar -P "cfvz" "${PROJECT_NAME}-${PROJECT_VERSION}.tar.gz" "${EXECUTABLE_OUTPUT_PATH}")
+add_dependencies(tar cxxtend)

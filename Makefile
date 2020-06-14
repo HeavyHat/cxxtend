@@ -1,7 +1,7 @@
 
 CMAKE ?= /usr/bin/cmake
 CTEST ?= /usr/bin/ctest
-PYTHON ?= /usr/bin/python3.8
+PYTHON ?= python3.8
 VENV_DIR ?= venv
 BUILD_DIR ?= build
 BUILD_TOOL ?= Ninja
@@ -67,3 +67,6 @@ docs-init:
 
 docs: docs-init
 	$(CMAKE) --build $(BUILD_DIR) --target Sphinx
+
+tar: init
+	$(CMAKE) --build $(BUILD_DIR) --target tar

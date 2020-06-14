@@ -1,4 +1,4 @@
-name: Install
+name: Build
 
 on:
   push:
@@ -19,6 +19,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
+    - name: Install Dependencies
+      run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build python python-venv
+
     - name: Initialisation
       run: make init
 
@@ -26,4 +29,4 @@ jobs:
       run: make build-test
 
     - name: Execute Tests
-      run: make exec-test|
+      run: make exec-test

@@ -16,8 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: Install clang-format
-      run: sudo apt-get install cmake clang-format clang-tidy
+    - name: Install Dependencies
+      run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build
 
     - name: configure
       run: make init

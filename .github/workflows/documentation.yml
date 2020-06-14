@@ -12,8 +12,8 @@ jobs:
     steps:
       - uses: actions/checkout@v1
 
-      - name: Install doxygen
-        run: sudo apt-get install python cmake doxygen
+      - name: Install Dependencies
+        run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build python python-venv
 
       - name: Build
         run: make docs
