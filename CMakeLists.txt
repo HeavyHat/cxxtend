@@ -24,6 +24,17 @@ if(CLANG_FORMAT)
             | grep -q "replacement offset")
 endif()
 
+find_program(CLANG_TIDY NAMES "clang-tidy")
+if(CLANG_TIDY)
+    message(STATUS "Found clang-tidy at ${CLANG_TIDY}")
+
+    add_custom_target(clang-tidy
+        COMMENT "Running clang-tidy"
+            COMMAND ${CLANG_TIDY} -p
+            ${PROJECT_BINARY_DIR}/compile_commands.json --checks=all
+            ${SRCS})
+endif()
+
 if(PROJECT_SOURCE_DIR STREQUAL PROJECT_BINARY_DIR)
     message(FATAL_ERROR "In-source builds not allowed. Please make a new
     directory (called a build directory) and run CMake from there.")

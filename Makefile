@@ -6,7 +6,7 @@ BUILD_TOOL ?= Ninja
 CXX_STARDARD ?= 20
 JOBS ?= 8
 
-.PHONY: install all exec-test test exec-benchmark benchmark init check-format format
+.PHONY: install all exec-test test exec-benchmark benchmark init check-format format clang-tidy lint
 
 $(BUILD_DIR)/rules.ninja:
 	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
@@ -53,3 +53,8 @@ format: init
 	$(CMAKE) --build $(BUILD_DIR) --target format
 
 benchmark: build-benchmark exec-benchmark
+
+clang-tidy: init
+	$(CMAKE) --build $(BUILD_DIR) --target clang-tidy
+
+lint: clang-tidy
