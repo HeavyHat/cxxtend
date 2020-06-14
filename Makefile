@@ -20,6 +20,17 @@ $(BUILD_DIR)/rules.ninja:
 	-Wall \
 	..
 
+testinit:
+	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
+	$(CMAKE) \
+   	-DCMAKE_CXX_STANDARD=$(CXX_STANDARD) \
+	-DENABLE_TEST_COVERAGE=ON \
+    -G$(BUILD_TOOL) \
+	-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
+	-Wdev \
+	-Wall \
+	..
+
 init: $(BUILD_DIR)/rules.ninja
 	ln -sf $(BUILD_DIR)/compile_commands.json .
 
@@ -29,7 +40,7 @@ clean:
 all:
 	$(CMAKE) --build $(BUILD_DIR) --target all -- -j$(JOBS)
 
-$(BUILD_DIR)/test/unit/tests.hh.tsk: init
+$(BUILD_DIR)/test/unit/tests.hh.tsk:
 	$(CMAKE) --build $(BUILD_DIR) --target tests.hh.tsk -- -j$(JOBS)
 
 build-test: $(BUILD_DIR)/test/unit/tests.hh.tsk
@@ -48,15 +59,15 @@ build-benchmark: $(BUILD_DIR)/test/unit/tests.hh.tsk
 exec-benchmark: build-benchmark
 	$(CMAKE) --build $(BUILD_DIR) --target benchmark -- -j$(JOBS)
 
-check-format: init
+check-format:
 	$(CMAKE) --build $(BUILD_DIR) --target check-format
 
-format: init
+format:
 	$(CMAKE) --build $(BUILD_DIR) --target format
 
 benchmark: build-benchmark exec-benchmark
 
-clang-tidy: init
+clang-tidy:
 	$(CMAKE) --build $(BUILD_DIR) --target clang-tidy
 
 lint: clang-tidy
@@ -65,8 +76,8 @@ docs-init:
 	$(PYTHON_EXE) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/python -m pip install -r requirements.txt
 
-docs: docs-init init
+docs: docs-init
 	$(CMAKE) --build $(BUILD_DIR) --target Sphinx
 
-tar: init
+tar:
 	$(CMAKE) --build $(BUILD_DIR) --target tar

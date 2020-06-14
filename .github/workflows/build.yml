@@ -10,6 +10,7 @@ on:
 
 env:
   CTEST_OUTPUT_ON_FAILURE: 1
+  CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
 
 jobs:
   build:
@@ -26,10 +27,13 @@ jobs:
       run: |
         make docs-init
         . venv/bin/activate
-        make init
+        make testinit
 
     - name: Build Tests
       run: make build-test
 
     - name: Execute Tests
       run: make exec-test
+
+		- name: collect code coverage
+      run: bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
