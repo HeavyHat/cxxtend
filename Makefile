@@ -61,7 +61,7 @@ clang-tidy: init
 
 lint: clang-tidy
 
-docs-init:
+docs-init: init
 	$(PYTHON) -m venv $(VENV_DIR)
 	$(VENV_DIR)/bin/python -m pip install -r requirements.txt
 
