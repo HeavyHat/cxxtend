@@ -16,7 +16,9 @@ jobs:
         run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build python3 python3-venv
 
       - name: Build
-        run: make docs
+        run: |
+          . venv/bin/activate
+          make docs
 
       - name: Publish
         uses: peaceiris/actions-gh-pages@v3
