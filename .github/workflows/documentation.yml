@@ -8,12 +8,12 @@ on:
 jobs:
   build:
     name: Build and publish documentation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v1
 
       - name: Install Dependencies
-        run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build python python-venv
+        run: sudo apt-get install libexpected-dev libgtest-dev libbenchmark-dev cmake clang-tidy clang-format doxygen ninja-build python3 python3-venv
 
       - name: Build
         run: make docs
