@@ -22,7 +22,9 @@
 namespace hh {
   namespace collection {
     template <typename T> class counter {
-      counter(T&& begin, T&& end) {}
+      counter(T&& begin, T&& end) {
+        std::copy(begin, end, )
+      }
     };
   }  // namespace collection
 }  // namespace hh
