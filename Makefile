@@ -5,6 +5,7 @@ PYTHON_EXE ?= python3.8
 VENV_DIR ?= venv
 BUILD_DIR ?= build
 BUILD_TOOL ?= Ninja
+BUILD_TYPE ?= RelWithDebInfo
 CXX_STARDARD ?= 20
 JOBS ?= 8
 
@@ -14,6 +15,7 @@ $(BUILD_DIR)/rules.ninja:
 	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
 	$(CMAKE) \
    	-DCMAKE_CXX_STANDARD=$(CXX_STANDARD) \
+	-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
     -G$(BUILD_TOOL) \
 	-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
 	-Wdev \
@@ -24,6 +26,7 @@ testinit:
 	@mkdir -p $(BUILD_DIR) && cd $(BUILD_DIR) && \
 	$(CMAKE) \
    	-DCMAKE_CXX_STANDARD=$(CXX_STANDARD) \
+	-DCMAKE_BUILD_TYPE=$(BUILD_TYPE) \
 	-DENABLE_TEST_COVERAGE=ON \
     -G$(BUILD_TOOL) \
 	-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
@@ -40,10 +43,8 @@ clean:
 all:
 	$(CMAKE) --build $(BUILD_DIR) --target all -- -j$(JOBS)
 
-$(BUILD_DIR)/test/unit/tests.hh.tsk:
+build-test:
 	$(CMAKE) --build $(BUILD_DIR) --target tests.hh.tsk -- -j$(JOBS)
-
-build-test: $(BUILD_DIR)/test/unit/tests.hh.tsk
 
 exec-test:
 	@cd $(BUILD_DIR) && \

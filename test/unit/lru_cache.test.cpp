@@ -8,7 +8,11 @@
 
 namespace hh::functools {
 
-  int add(int a, int b) { return a + b; }
+  namespace {
+    int add(int a, int b) { return a + b; }
+
+    int add_ptrs(int* a, int* b) { return *a + *b; }
+  }  // namespace
 
   TEST(lru_cache, initiliased_with_add_with_a_size_of_128) {
     auto cache_add = hh::functools::make_lrucache(add);
@@ -86,7 +90,7 @@ namespace hh::functools {
            "sizes!";
   }
 
-  TEST(lru_cache, retriving_cached_results_is_faster_than_calling_slow_method) {
+  TEST(lru_cache, retrieving_cached_results_is_faster_than_calling_slow_method) {
     constexpr static auto ITERATIONS = 128;
     std::function<int(int, int)> delayed_add = hh::helpers::make_delayed<1>(add);
     auto cached_add = hh::functools::make_lrucache(delayed_add, ITERATIONS);
@@ -104,6 +108,29 @@ namespace hh::functools {
     }
     end = std::chrono::high_resolution_clock::now();
     auto cached_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
-    EXPECT_LT(cached_time, normal_time) << "Retrieving data from cache seems to be extremely slow!";
+    EXPECT_LT(cached_time, (normal_time - normal_time / 2))
+        << "Retrieving data from cache seems to be extremely slow!";
+  }
+
+  TEST(lru_cache, cache_is_faster_for_slow_operations_which_use_owner_semantics) {
+    constexpr static auto ITERATIONS = 128;
+    auto delayed_add = hh::helpers::make_delayed<1>(add_ptrs);
+    auto cached_add = hh::functools::make_lrucache(delayed_add, ITERATIONS);
+    std::vector<int> expected{};
+    std::vector<int> actual{};
+    auto start = std::chrono::high_resolution_clock::now();
+    for (int i = 1; i < ITERATIONS; ++i) {
+      cached_add(&i, &i);
+    }
+    auto end = std::chrono::high_resolution_clock::now();
+    auto normal_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+    start = std::chrono::high_resolution_clock::now();
+    for (int i = 1; i < ITERATIONS; ++i) {
+      cached_add(&i, &i);
+    }
+    end = std::chrono::high_resolution_clock::now();
+    auto cached_time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start).count();
+    EXPECT_LT(cached_time, normal_time - (normal_time / 2))
+        << "Retrieving data from cache seems to be extremely slow!";
   }
 }  // namespace hh::functools
