@@ -15,10 +15,13 @@ Directory hh
 Files
 -----
 
+- :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_call_counter.hpp`
+- :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_counter.hpp`
 - :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_hash.hpp`
 - :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_helpers.hpp`
 - :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_lru_cache.hpp`
 - :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_optional.hpp`
 - :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_rand.hpp`
+- :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_typetraits.hpp`
 
 

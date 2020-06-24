@@ -228,7 +228,20 @@
 <dl class="cpp class">
 <dt id="_CPPv4I0DpEN2hh9functools9lru_cacheE">
 <span id="_CPPv3I0DpEN2hh9functools9lru_cacheE"></span><span id="_CPPv2I0DpEN2hh9functools9lru_cacheE"></span>template&lt;typename <code class="sig-name descname">RETURN_TYPE</code>, typename ...<code class="sig-name descname">ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1lru__cache"></span><em class="property">class </em><code class="sig-prename descclassname">hh::functools<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">lru_cache</code><a class="headerlink" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="Permalink to this definition">¶</a><br/></dt>
-<dd><div class="breathe-sectiondef docutils container">
+<dd><p>Functional-style lru-cache which either calls the function from cache or returns a previouly attained value.</p>
+<p>The cache is initialised with a specific size and only the most-recently used N argument tuples will be recorded. After the size paramter exceeds the maximum allowed size previous tuples return values will be dropped. Providing a max size of zero makes the cache size infinite, and can retain cached values as long as memory is available. The underlying implementation is based on hastaples to look up the hashed parmaeter tuples which have been used to call the function, for this reason all types in the argument list for the underlying function must implement the std::hash&lt;T&gt; specialisation and all for equality comparison.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>std::hash() </p>
+</dd>
+<dt><strong>See</strong></dt><dd><p>make_lrucache </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">RETURN_TYPE</span></code>: The return type of the function used to instantiate this cache. @tparams ARGUMENTS… Paramter Pack of types which this function declares in its signature. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Types</p>
 <dl class="cpp type">
 <dt id="_CPPv4N2hh9functools9lru_cache11return_typeE">
@@ -237,19 +250,23 @@
 <dl class="cpp type">
 <dt id="_CPPv4N2hh9functools9lru_cache19decayed_return_typeE">
 <span id="_CPPv3N2hh9functools9lru_cache19decayed_return_typeE"></span><span id="_CPPv2N2hh9functools9lru_cache19decayed_return_typeE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a5b2c376e2308b1469801af800258cd57"></span><em class="property">using </em><code class="sig-name descname">decayed_return_type</code> = std::decay_t&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache19decayed_return_typeE" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>The return type of this cache. </p>
+</dd></dl>
 <dl class="cpp type">
 <dt id="_CPPv4N2hh9functools9lru_cache9cache_keyE">
 <span id="_CPPv3N2hh9functools9lru_cache9cache_keyE"></span><span id="_CPPv2N2hh9functools9lru_cache9cache_keyE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a65980998f4bed4d8a6f1fc4d3d32c1fd"></span><em class="property">using </em><code class="sig-name descname">cache_key</code> = std::tuple&lt;std::decay_t&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::ARGUMENTS">ARGUMENTS</a>&gt;...&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache9cache_keyE" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>The decayed returned type of this cache. </p>
+</dd></dl>
 <dl class="cpp type">
 <dt id="_CPPv4N2hh9functools9lru_cache11cache_entryE">
-<span id="_CPPv3N2hh9functools9lru_cache11cache_entryE"></span><span id="_CPPv2N2hh9functools9lru_cache11cache_entryE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a20149794b2b139ee972cdb1f0908a209"></span><em class="property">using </em><code class="sig-name descname">cache_entry</code> = std::pair&lt;<a class="reference internal" href="#_CPPv4N2hh9functools9lru_cache9cache_keyE" title="hh::functools::lru_cache::cache_key">cache_key</a>, <a class="reference internal" href="#_CPPv4N2hh9functools9lru_cache19decayed_return_typeE" title="hh::functools::lru_cache::decayed_return_type">decayed_return_type</a>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache11cache_entryE" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<span id="_CPPv3N2hh9functools9lru_cache11cache_entryE"></span><span id="_CPPv2N2hh9functools9lru_cache11cache_entryE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1aa79f6cdc1805cb9c3acf5afdd1a760b7"></span><em class="property">using </em><code class="sig-name descname">cache_entry</code> = std::pair&lt;<a class="reference internal" href="#_CPPv4N2hh9functools9lru_cache9cache_keyE" title="hh::functools::lru_cache::cache_key">cache_key</a>, <a class="reference internal" href="#_CPPv4N2hh9functools9lru_cache19decayed_return_typeE" title="hh::functools::lru_cache::decayed_return_type">decayed_return_type</a>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache11cache_entryE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p>The tuple type used to key return values. Two equal cache keys should return equal return values. </p>
+</dd></dl>
 <dl class="cpp type">
 <dt id="_CPPv4N2hh9functools9lru_cache18function_signatureE">
-<span id="_CPPv3N2hh9functools9lru_cache18function_signatureE"></span><span id="_CPPv2N2hh9functools9lru_cache18function_signatureE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a31414b8ab3e70d5999c68a5a487e8fbe"></span><em class="property">using </em><code class="sig-name descname">function_signature</code> = std::function&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::ARGUMENTS">ARGUMENTS</a>...<span class="sig-paren">)</span>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache18function_signatureE" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<span id="_CPPv3N2hh9functools9lru_cache18function_signatureE"></span><span id="_CPPv2N2hh9functools9lru_cache18function_signatureE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1ac405fa2b81376bea726c21451873bfea"></span><em class="property">using </em><code class="sig-name descname">function_signature</code> = std::function&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::ARGUMENTS">ARGUMENTS</a>...<span class="sig-paren">)</span>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache18function_signatureE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p>The entry in the cache implementation. The decayed type is used to prevent naught reference tricks. </p>
+</dd></dl>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Functions</p>
@@ -260,27 +277,62 @@
 <dl class="cpp function">
 <dt id="_CPPv4N2hh9functools9lru_cache9lru_cacheEPF11RETURN_TYPEDp9ARGUMENTSEj">
 <span id="_CPPv3N2hh9functools9lru_cache9lru_cacheEPF11RETURN_TYPEDp9ARGUMENTSEj"></span><span id="_CPPv2N2hh9functools9lru_cache9lru_cacheEPF11RETURN_TYPEDp9ARGUMENTSEj"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a69c82114b4df6be1b66b9460cb58dfba"></span><em class="property">constexpr</em> <code class="sig-name descname">lru_cache</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a> (*<em>func</em>)<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::ARGUMENTS">ARGUMENTS</a>...<span class="sig-paren">)</span>, unsigned int <em>cache_size</em>, <span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache9lru_cacheEPF11RETURN_TYPEDp9ARGUMENTSEj" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>Constructs a cache with a given function and size.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>make_lrucache() </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: The underlying function which will be used to populate the cache on call. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cache_size</span></code>: The maximum size of the underlying cache. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
 <dl class="cpp function">
 <dt id="_CPPv4N2hh9functools9lru_cache9lru_cacheE18function_signaturej">
 <span id="_CPPv3N2hh9functools9lru_cache9lru_cacheE18function_signaturej"></span><span id="_CPPv2N2hh9functools9lru_cache9lru_cacheE18function_signaturej"></span><span id="hh::functools::lru_cache::lru_cache__function_signature.unsigned-iCE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a9c11749a87195e39cfa4abe73e7ce514"></span><em class="property">constexpr</em> <code class="sig-name descname">lru_cache</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2hh9functools9lru_cache18function_signatureE" title="hh::functools::lru_cache::function_signature">function_signature</a> <em>func</em>, unsigned int <em>cache_size</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2hh9functools9lru_cache9lru_cacheE18function_signaturej" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>Constructs a cache with a given function and size.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>make_lrucache() </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: The underlying function which will be used to populate the cache on call. </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cache_size</span></code>: The maximum size of the underlying cache. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
 <dl class="cpp function">
 <dt id="_CPPv4N2hh9functools9lru_cacheD0Ev">
 <span id="_CPPv3N2hh9functools9lru_cacheD0Ev"></span><span id="_CPPv2N2hh9functools9lru_cacheD0Ev"></span><span id="hh::functools::lru_cache::~lru_cache"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1aebd076cedf17bd0cd84380c5a28cf6c4"></span><code class="sig-name descname">~lru_cache</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = default<a class="headerlink" href="#_CPPv4N2hh9functools9lru_cacheD0Ev" title="Permalink to this definition">¶</a><br/></dt>
 <dd></dd></dl>
 <dl class="cpp function">
 <dt id="_CPPv4IDpEN2hh9functools9lru_cacheclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS">
-<span id="_CPPv3IDpEN2hh9functools9lru_cacheclEDpRR15INPUT_ARGUMENTS"></span><span id="_CPPv2IDpEN2hh9functools9lru_cacheclEDpRR15INPUT_ARGUMENTS"></span>template&lt;typename ...<code class="sig-name descname">INPUT_ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1lru__cache_1aadedcdf2c548555af58e474261715020"></span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a> <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN2hh9functools9lru_cacheclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="hh::functools::lru_cache::operator()::INPUT_ARGUMENTS">INPUT_ARGUMENTS</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN2hh9functools9lru_cacheclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<span id="_CPPv3IDpEN2hh9functools9lru_cacheclEDpRR15INPUT_ARGUMENTS"></span><span id="_CPPv2IDpEN2hh9functools9lru_cacheclEDpRR15INPUT_ARGUMENTS"></span>template&lt;typename ...<code class="sig-name descname">INPUT_ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1lru__cache_1ae7928aeba4b8be0a6ad8eb3ab02aafd3"></span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools9lru_cacheE" title="hh::functools::lru_cache::RETURN_TYPE">RETURN_TYPE</a> <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN2hh9functools9lru_cacheclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="hh::functools::lru_cache::operator()::INPUT_ARGUMENTS">INPUT_ARGUMENTS</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN2hh9functools9lru_cacheclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="Permalink to this definition">¶</a><br/></dt>
+<dd><p>Calls the underlying function or returns historic value.</p>
+<p>Will first check to see if the tuple has been calculated previously, to do this is requires us to hash the arguments and call an equality of cache keys. This can have performance implications for functions which have very long argument lists where this operation is more expensive than calling the underlying function.</p>
+<p><dl class="simple">
+<dt><strong>See</strong></dt><dd><p>lru_cache() </p>
+</dd>
+<dt><strong>Template Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">INPUT_ARGUMENTS</span></code>: A collection of arguments which should be convertibale to the cachekey of the underlying. A static assertion checks this property. @params args The arguments to call the function with, arguments are perfectly forwarded to the underlying signature of the function this cache was initialised with. Implicitly converting arguments as required. </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
 <dl class="cpp function">
 <dt id="_CPPv4NK2hh9functools9lru_cache8max_sizeEv">
 <span id="_CPPv3NK2hh9functools9lru_cache8max_sizeEv"></span><span id="_CPPv2NK2hh9functools9lru_cache8max_sizeEv"></span><span id="hh::functools::lru_cache::max_sizeCCE"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a6e3f8f25108d1398248d0354087ed8db"></span><em class="property">constexpr</em> auto <code class="sig-name descname">max_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2hh9functools9lru_cache8max_sizeEv" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>The maximum number of entries this cache can store. If 0 an infinite number of values can be stored. </p>
+</dd></dl>
 <dl class="cpp function">
 <dt id="_CPPv4NK2hh9functools9lru_cache4sizeEv">
 <span id="_CPPv3NK2hh9functools9lru_cache4sizeEv"></span><span id="_CPPv2NK2hh9functools9lru_cache4sizeEv"></span><span id="hh::functools::lru_cache::sizeC"></span><span class="target" id="classhh_1_1functools_1_1lru__cache_1a33043e0ddff7aaee8c047b15c5e41d4b"></span>auto <code class="sig-name descname">size</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2hh9functools9lru_cache4sizeEv" title="Permalink to this definition">¶</a><br/></dt>
-<dd></dd></dl>
+<dd><p>The current number of retained historic values </p>
+</dd></dl>
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
@@ -298,7 +350,7 @@
 <dd></dd></dl>
 <dl class="cpp var">
 <dt>
-<span class="target" id="classhh_1_1functools_1_1lru__cache_1acb0c3003812b79a9c2fe1b270d439f5b"></span><code class="sig-name descname">std::unordered_map&lt; cache_key, typename decltype(d_cache)::iterator &gt; d_cache_map</code></dt>
+<span class="target" id="classhh_1_1functools_1_1lru__cache_1aba7166188991ca3dfbd5198bda0f6cf7"></span><code class="sig-name descname">std::unordered_map&lt; cache_key, typename decltype(d_cache)::iterator &gt; d_cache_map</code></dt>
 <dd></dd></dl>
 </div>
 <div class="breathe-sectiondef docutils container">

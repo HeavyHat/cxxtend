@@ -1,0 +1,16 @@
+.. _exhale_class_classhh_1_1functools_1_1call__counter:
+
+Template Class call_counter
+===========================
+
+- Defined in :ref:`file__home_runner_work_cxxtend_cxxtend_include_hh_call_counter.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: hh::functools::call_counter
+   :members:
+   :protected-members:
+   :undoc-members:

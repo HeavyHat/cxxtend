@@ -1,0 +1,20 @@
+
+.. _namespace_hh__collection:
+
+Namespace hh::collection
+========================
+
+
+.. contents:: Contents
+   :local:
+   :backlinks: none
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classhh_1_1collection_1_1counter`

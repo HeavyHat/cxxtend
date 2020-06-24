@@ -17,7 +17,7 @@ Namespaces
 ----------
 
 
-- :ref:`namespace_std__@0`
+- :ref:`namespace_std__@2`
 
 
 Classes

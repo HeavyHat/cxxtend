@@ -25,6 +25,16 @@ Files
 .. toctree::
    :maxdepth: 5
 
+   file__home_runner_work_cxxtend_cxxtend_include_hh_call_counter.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_cxxtend_cxxtend_include_hh_counter.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
    file__home_runner_work_cxxtend_cxxtend_include_hh_hash.hpp.rst
 
 .. toctree::
@@ -46,3 +56,8 @@ Files
    :maxdepth: 5
 
    file__home_runner_work_cxxtend_cxxtend_include_hh_rand.hpp.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   file__home_runner_work_cxxtend_cxxtend_include_hh_typetraits.hpp.rst

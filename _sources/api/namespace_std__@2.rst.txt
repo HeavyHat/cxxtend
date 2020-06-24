@@ -1,7 +1,7 @@
 
-.. _namespace_std__@0:
+.. _namespace_std__@2:
 
-Namespace std::@0
+Namespace std::@2
 =================
 
 

@@ -1,0 +1,42 @@
+
+.. _program_listing_file__home_runner_work_cxxtend_cxxtend_include_hh_counter.hpp:
+
+Program Listing for File counter.hpp
+====================================
+
+|exhale_lsh| :ref:`Return to documentation for file <file__home_runner_work_cxxtend_cxxtend_include_hh_counter.hpp>` (``/home/runner/work/cxxtend/cxxtend/include/hh/counter.hpp``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+.. code-block:: cpp
+
+   /*
+    * =====================================================================================
+    *
+    *       Filename:  counter.hpp
+    *
+    *    Description:
+    *
+    *        Version:  1.0
+    *        Created:  06/24/2020 12:02:15 PM
+    *       Revision:  none
+    *       Compiler:  gcc
+    *
+    *         Author:  YOUR NAME (),
+    *   Organization:
+    *
+    * =====================================================================================
+    */
+   
+   #ifndef INCLUDED_HH_COUNTER_HPP
+   #define INCLUDED_HH_COUNTER_HPP
+   
+   namespace hh {
+     namespace collection {
+       template <typename T> class counter {
+         counter(T&& begin, T&& end) {}
+       };
+     }  // namespace collection
+   }  // namespace hh
+   
+   #endif

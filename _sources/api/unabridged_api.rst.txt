@@ -14,6 +14,11 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
+   namespace_hh__collection.rst
+
+.. toctree::
+   :maxdepth: 5
+
    namespace_hh__functools.rst
 
 .. toctree::
@@ -29,7 +34,7 @@ Namespaces
 .. toctree::
    :maxdepth: 5
 
-   namespace_std__@0.rst
+   namespace_std__@2.rst
 
 Classes and Structs
 *******************
@@ -49,6 +54,16 @@ Classes and Structs
    :maxdepth: 5
 
    structstd_1_1hash_3_01std_1_1tuple_3_01TT_8_8_8_01_4_01_4.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classhh_1_1collection_1_1counter.rst
+
+.. toctree::
+   :maxdepth: 5
+
+   classhh_1_1functools_1_1call__counter.rst
 
 .. toctree::
    :maxdepth: 5

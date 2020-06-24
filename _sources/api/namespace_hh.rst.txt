@@ -17,6 +17,8 @@ Namespaces
 ----------
 
 
+- :ref:`namespace_hh__collection`
+
 - :ref:`namespace_hh__functools`
 
 - :ref:`namespace_hh__helpers`

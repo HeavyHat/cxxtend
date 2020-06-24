@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Template Class call_counter &#8212; cxxtend 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bootstrap-treeview/bootstrap-treeview.min.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/bootstrap-treeview/bootstrap-treeview.min.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#api/classhh_1_1functools_1_1call__counter" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="cxxtend 1.0 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">cxxtend 1.0 documentation</span>
+          <span class="md-header-nav__topic"> Template Class call_counter </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="GET" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">cxxtend 1.0 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="cxxtend 1.0 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="cxxtend 1.0 documentation">cxxtend 1.0 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#api-classhh-1-1functools-1-1call-counter--page-root" class="md-nav__link">Template Class call_counter</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-documentation" class="md-nav__link">Class Documentation</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/api/classhh_1_1functools_1_1call__counter.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="exhale-class-classhh-1-1functools-1-1call-counter"></span><h1 id="api-classhh-1-1functools-1-1call-counter--page-root">Template Class call_counter<a class="headerlink" href="#api-classhh-1-1functools-1-1call-counter--page-root" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file__home_runner_work_cxxtend_cxxtend_include_hh_call_counter.hpp.html#file-home-runner-work-cxxtend-cxxtend-include-hh-call-counter-hpp"><span class="std std-ref">File call_counter.hpp</span></a></p></li>
+</ul>
+
+<h2 id="class-documentation">Class Documentation<a class="headerlink" href="#class-documentation" title="Permalink to this headline">¶</a></h2>
+<dl class="cpp class">
+<dt id="_CPPv4I0DpEN2hh9functools12call_counterE">
+<span id="_CPPv3I0DpEN2hh9functools12call_counterE"></span><span id="_CPPv2I0DpEN2hh9functools12call_counterE"></span>template&lt;typename <code class="sig-name descname">RETURN_TYPE</code>, typename ...<code class="sig-name descname">ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1call__counter"></span><em class="property">class </em><code class="sig-prename descclassname">hh::functools<code class="sig-prename descclassname">::</code></code><code class="sig-name descname">call_counter</code><a class="headerlink" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="Permalink to this definition">¶</a><br/></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Types</p>
+<dl class="cpp type">
+<dt id="_CPPv4N2hh9functools12call_counter8key_typeE">
+<span id="_CPPv3N2hh9functools12call_counter8key_typeE"></span><span id="_CPPv2N2hh9functools12call_counter8key_typeE"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1aa60e738f3a25cf2bcb987fff57e05e4a"></span><em class="property">using </em><code class="sig-name descname">key_type</code> = std::tuple&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::ARGUMENTS">ARGUMENTS</a>...&gt;<a class="headerlink" href="#_CPPv4N2hh9functools12call_counter8key_typeE" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp type">
+<dt id="_CPPv4N2hh9functools12call_counter17function_signtureE">
+<span id="_CPPv3N2hh9functools12call_counter17function_signtureE"></span><span id="_CPPv2N2hh9functools12call_counter17function_signtureE"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1ae6d0dab44eb4cd6da2c6b5f5a8ecee03"></span><em class="property">using </em><code class="sig-name descname">function_signture</code> = std::function&lt;<a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::RETURN_TYPE">RETURN_TYPE</a><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::ARGUMENTS">ARGUMENTS</a>...<span class="sig-paren">)</span>&gt;<a class="headerlink" href="#_CPPv4N2hh9functools12call_counter17function_signtureE" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Functions</p>
+<dl class="cpp function">
+<dt id="_CPPv4N2hh9functools12call_counter12call_counterEv">
+<span id="_CPPv3N2hh9functools12call_counter12call_counterEv"></span><span id="_CPPv2N2hh9functools12call_counter12call_counterEv"></span><span id="hh::functools::call_counter::call_counter"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1a4b49cdf2ef3bee838b2799960d7b0377"></span><code class="sig-name descname">call_counter</code><span class="sig-paren">(</span><span class="sig-paren">)</span> = delete<a class="headerlink" href="#_CPPv4N2hh9functools12call_counter12call_counterEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4N2hh9functools12call_counter12call_counterEPF11RETURN_TYPEDp9ARGUMENTSE">
+<span id="_CPPv3N2hh9functools12call_counter12call_counterEPF11RETURN_TYPEDp9ARGUMENTSE"></span><span id="_CPPv2N2hh9functools12call_counter12call_counterEPF11RETURN_TYPEDp9ARGUMENTSE"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1ab8f11f266a2b48cd7193e4a67efea5df"></span><em class="property">constexpr</em> <code class="sig-name descname">call_counter</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::RETURN_TYPE">RETURN_TYPE</a> (*<em>func</em>)<span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::ARGUMENTS">ARGUMENTS</a>...<span class="sig-paren">)</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2hh9functools12call_counter12call_counterEPF11RETURN_TYPEDp9ARGUMENTSE" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4N2hh9functools12call_counter12call_counterE17function_signture">
+<span id="_CPPv3N2hh9functools12call_counter12call_counterE17function_signture"></span><span id="_CPPv2N2hh9functools12call_counter12call_counterE17function_signture"></span><span id="hh::functools::call_counter::call_counter__function_signtureCE"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1a28ec775fe05deb2ec7a48eec8f1cd4ac"></span><em class="property">constexpr</em> <code class="sig-name descname">call_counter</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4N2hh9functools12call_counter17function_signtureE" title="hh::functools::call_counter::function_signture">function_signture</a> <em>func</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2hh9functools12call_counter12call_counterE17function_signture" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4IDpEN2hh9functools12call_counter10call_countEyDpRR15INPUT_ARGUMENTS">
+<span id="_CPPv3IDpEN2hh9functools12call_counter10call_countEDpRR15INPUT_ARGUMENTS"></span><span id="_CPPv2IDpEN2hh9functools12call_counter10call_countEDpRR15INPUT_ARGUMENTS"></span>template&lt;typename ...<code class="sig-name descname">INPUT_ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1call__counter_1ad2644a404ff19a3059afe407cc508b70"></span>unsigned long long <code class="sig-name descname">call_count</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpEN2hh9functools12call_counter10call_countEyDpRR15INPUT_ARGUMENTS" title="hh::functools::call_counter::call_count::INPUT_ARGUMENTS">INPUT_ARGUMENTS</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4IDpEN2hh9functools12call_counter10call_countEyDpRR15INPUT_ARGUMENTS" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4IDpENK2hh9functools12call_counterclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS">
+<span id="_CPPv3IDpENK2hh9functools12call_counterclEDpRR15INPUT_ARGUMENTS"></span><span id="_CPPv2IDpENK2hh9functools12call_counterclEDpRR15INPUT_ARGUMENTS"></span>template&lt;typename ...<code class="sig-name descname">INPUT_ARGUMENTS</code>&gt;<br/><span class="target" id="classhh_1_1functools_1_1call__counter_1ad51e8c42d6bcb5e5f2fa8f734d50fc8f"></span><a class="reference internal" href="#_CPPv4I0DpEN2hh9functools12call_counterE" title="hh::functools::call_counter::RETURN_TYPE">RETURN_TYPE</a> <code class="sig-name descname">operator()</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4IDpENK2hh9functools12call_counterclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="hh::functools::call_counter::operator()::INPUT_ARGUMENTS">INPUT_ARGUMENTS</a>&amp;&amp;... <em>args</em><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4IDpENK2hh9functools12call_counterclE11RETURN_TYPEDpRR15INPUT_ARGUMENTS" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4NK2hh9functools12call_counter14unique_entriesEv">
+<span id="_CPPv3NK2hh9functools12call_counter14unique_entriesEv"></span><span id="_CPPv2NK2hh9functools12call_counter14unique_entriesEv"></span><span id="hh::functools::call_counter::unique_entriesC"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1aea393b7c41cdd1b94215dae208df2907"></span>unsigned int <code class="sig-name descname">unique_entries</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2hh9functools12call_counter14unique_entriesEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+<dl class="cpp function">
+<dt id="_CPPv4NK2hh9functools12call_counter11total_callsEv">
+<span id="_CPPv3NK2hh9functools12call_counter11total_callsEv"></span><span id="_CPPv2NK2hh9functools12call_counter11total_callsEv"></span><span id="hh::functools::call_counter::total_callsC"></span><span class="target" id="classhh_1_1functools_1_1call__counter_1a97ff4c04f30c71f11531704aba4eb526"></span>unsigned long long <code class="sig-name descname">total_calls</code><span class="sig-paren">(</span><span class="sig-paren">)</span> <em class="property">const</em><a class="headerlink" href="#_CPPv4NK2hh9functools12call_counter11total_callsEv" title="Permalink to this definition">¶</a><br/></dt>
+<dd></dd></dl>
+</div>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright 2020, Joshua Langley.
+              
+          </div>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 3.1.1.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
